@@ -11,7 +11,14 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
+void swap (int *i, int *j)
+{
+    int temp;
+    temp = *i;
+    *i = *j;
+    *j = temp;
+}
+ 
 int main(int argc, char *argv[])//esses argumentos nós não utilizamosa, eles já estão no projeto. 
 {
 	// Criação e inicialização das variáveis.
@@ -34,7 +41,7 @@ int main(int argc, char *argv[])//esses argumentos nós não utilizamosa, eles já 
 		//nos ponteiros.
 		printf("\nvariavel_1 = %i", *ponteiro_1);
 		printf("\nvariavel_2 = %i", *ponteiro_2);
-		
+		 
 		// Exibe a solicitação de controle.
 		printf("\n\nDeseja finalizar o programa? (s/n) ");
 		// Efetua a leitura do comando.
@@ -51,6 +58,14 @@ int main(int argc, char *argv[])//esses argumentos nós não utilizamosa, eles já 
 		// Efetua a leitura do valor e tranfere o valor para a variavel_2.
 		scanf("%i%c", ponteiro_2, &descarga);
 		
+		printf("\nvariavel_1 = %i", variavel_1);
+		printf("\nvariavel_2 = %i", variavel_2);
+   		
+		swap (&variavel_1, &variavel_2);
+    	
+		printf ("\n\nDepois da troca elas valem:");
+		
+   		
 	}
 	//Retorna zero.
 	return 0;

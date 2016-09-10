@@ -4,33 +4,47 @@
 // Laboratório de Algoritmo II
 //
 // Autora: Alana Azevedo, acadêmica do curso de Sistemas de Informação, da Faculdade Antonio Meneghetti
-// Data: 02/09/2016
+// Data: 09/09/2016
 ////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
+typedef struct
+{
+	int indice;
+	char nome [50];
+	char telefone [15];
+	char endereco [50];
+	char email [50];
+}entrada;
 
 int main()
 {
-	//criação e inicialização das variáveise ponteiros.
-	//char Minha_String [] = {"1234567890"};
-	char Minha_String [] = {'1','2','3','4','5','6','7','8','9','0'};
-	char *Meu_Ponteiro = &Minha_String;
+	//criação e inicializaçãp das variáveis e ponteiros.
+	entrada Pagina_01;
+	entrada *Ptr = &Pagina_01;
 	
-	//exibe o valor contido em cada posição da string a partir do endereço
-	//contido no ponteiro.
-	do
-	{
-		printf("\nO Meu_Ponteiro aponta para o valor: %c\n", *Meu_Ponteiro);
-		Meu_Ponteiro++;
-	}
+	//Pagina_01.Indice = 1;
+	//Pagina_01.Nome = ("Alana Azevedo da Silva");
+	//Pagina_01.Telefone = ("(51) 9719-6069");
 	
-	while (*Meu_Ponteiro != 0);
+	printf("\nInsira a entrada: ");
+	//scanf("%i", &Pagina_01.indice);
+	scanf ("%i", &Ptr->indice);
+	//scanf ("%i", &(*Ptr).indice);
 	
-	printf("\nO tamanho da Minha_String e: %d\n", sizeof (Minha_String));
+	
+	printf("\nInsira o nome: ");
+	scanf("%s", &Pagina_01.nome);
+
+	printf("\nInsira o telefone: ");
+	scanf("%s", &Pagina_01.telefone);
+	
+	printf("\nEntrada: %i", Pagina_01.indice);
+	//printf("\nNome: %s", Pagina_01.nome);
+	printf("\nNome: %s", Ptr->nome);
+	printf("\nNome: %s", (*Ptr).nome);
+	printf("\nTelefone: %s", Pagina_01.telefone);
 	
 	//retorna 0
 	return 0;
